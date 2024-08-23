@@ -1,0 +1,17 @@
+# Ignore the virtual environment
+JurisAI/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment variable files
+.env
+
+# Ignore Git directory and files
+.git
+.gitignore
+
+# Ignore Mac OS specific files
+.DS_Store
+node_modules
