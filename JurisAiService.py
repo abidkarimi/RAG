@@ -109,6 +109,8 @@ def search_query(query, index, model, chunks, top_k=2):
 
 # Function to call OpenAI for generating answers using RAG
 def generate_answer(query, context):
+#    query = 'What action must an enforcement officer take if they wish to resign from their appointment?'
+
     prompt = f"Context:\n{context}\n\nQuery: {query}\n\nProvide a concise answer based on the context."
 
     response = openai.ChatCompletion.create(
@@ -155,7 +157,7 @@ def callerFun(query_from_user):
 
     return {
         # 'Result': results,
-        # 'Query': query,
+        #'Query': 'query'
         # 'Keu': openai_api_key,
         'generate_answer': generate_answer(query, results)
     }

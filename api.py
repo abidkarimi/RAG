@@ -17,11 +17,15 @@ def get_data():
     google_places_api_key = request.args.get('key')
     types_param = request.args.get('types')
     print("Received params:", input_param)
-    # data = {'message': llm_pipeline_using_deepset(input_param, "")}
     return jsonify(
         callerFun(input_param)
+    )	   
+ # data = {'message': llm_pipeline_using_deepset(input_param, "")}
+#    return jsonify(
+ #       'query': 'input_param'
+	#callerFun(input_param)
         # process_data()
-    )
+  #  )
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
