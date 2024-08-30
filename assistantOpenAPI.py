@@ -49,7 +49,9 @@ def get_assistant_response(query):
         if run.status == 'completed':
             messages_ = client.beta.threads.messages.list(thread_id=threadId)
             response = messages_.data[0].content[0].text.value
-            return response
+            return {
+                'generate_answer':response
+                }
         
        
 
