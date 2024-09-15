@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.3'
 
 services:
   jurisai-app:
@@ -12,6 +12,9 @@ services:
       - ../JurisAI:/app
     environment:
       - NODE_ENV=dev
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+          - mynetwork
 
   rag-service:
     build:
@@ -24,3 +27,8 @@ services:
       - .:/app
     environment:
       - FLASK_ENV=dev
+    networks:
+    - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
