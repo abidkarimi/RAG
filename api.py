@@ -1,11 +1,14 @@
 from flask import Flask, request, jsonify
-from JurisAiService import process_data,callerFun
+from flask_cors import CORS
+
+# from JurisAiService import process_data,callerFun
 from assistantOpenAPI import get_assistant_response
 # from openAiApi import callerFun
 # from my_streamlit_app import main, main1
 # from chatbot_app import check, llm_pipeline_using_deepset
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api', methods=['GET'])
 def get_data():
